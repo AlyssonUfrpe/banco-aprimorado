@@ -16,11 +16,24 @@ class Conta():
         else:
             return False
 
-
+class ContaBonificada (conta):
+    def __init__(self, numConta ):
+        super (). __init__(numconta):
+            self.bonusAcumulado = 0
+   
+    def deposite(self, valor):
+        super().deposite(valor)
+            self.bonusAcumulado = self.bonusAcumulado + valor * 0.001
+    
+    def renderBonus(self):
+        self.saldo = self.saldo + self.bonusAcumulado
+        self.bonusAcumulado = 0
+    
 class Poupanca(Conta):
 
     def render(self):
         self.saldo = self.saldo + self.saldo*0.01
+        
 
 
 class Banco():
