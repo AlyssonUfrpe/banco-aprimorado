@@ -23,7 +23,7 @@ class ContaBonificada (Conta):
    
     def deposite(self, valor):
         super().deposite(valor)
-        self.bonusAcumulado = self.bonusAcumulado + valor * 0.001
+        self.bonusAcumulado = self.bonusAcumulado + valor + 0.0001*valor
     
     def renderBonus(self):
         self.saldo = self.saldo + self.bonusAcumulado
